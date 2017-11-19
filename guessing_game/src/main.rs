@@ -5,6 +5,7 @@ use std::cmp::Ordering;
 
 fn main() {
     println!("Guess the number!");
+        // Generate a random number between 1 and 100
     let secret = rand::thread_rng().gen_range(1,101);
 
     loop {
@@ -16,9 +17,6 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
-
-        // Generate a random number between 1 and 100
-        println!("secret {}", secret);
 
         match guess.cmp(&secret){
             Ordering::Equal => {
